@@ -4,14 +4,14 @@
 TODO
 """
 __author__ = "Aleksandr Verevkin"
+__licence__ = "GPL 3.0"
+__status__ = "production"
 from screen import Screen
 
 
 def main():
-    screen = Screen()
+    Screen()
 
 
 if __name__ == "__main__":
     main()
-
-

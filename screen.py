@@ -2,7 +2,10 @@ from tkinter import *
 from tkinter import ttk
 from random import randrange
 from typing import List
+import logging
+from logging import config
 from bubblesort import bubble_sort
+# TODO UI
 
 
 class Screen:
@@ -14,8 +17,13 @@ class Screen:
     CANVAS_HEIGHT = 380
     CANVAS_WIDTH = WINDOW_WIDTH
     SPACING = 5
+    ALGORITHMS = ["Bubble Sort", "Merge Sort", "Quicksort"]
 
     def __init__(self) -> None:
+        logging.config.fileConfig("logging.conf")  # Use logger config
+        self.logger = logging.getLogger(__name__)  # Create logger
+
+        self.logger.debug("Setting up screen...")
         self.data = []
         self.window = Tk()
         self.window.title("Sorting Algorithms Visualization")
@@ -32,9 +40,9 @@ class Screen:
         alg_label = Label(self.frame, text="Algorithm: ", bg='grey')
         alg_label.grid(row=0, column=0, padx=5, pady=5)
 
-        self.alg_menu = ttk.Combobox(self.frame, textvariable=self.algorithm, values=['Bubble Sort', 'Merge Sort'])
+        self.alg_menu = ttk.Combobox(self.frame, textvariable=self.algorithm, values=self.ALGORITHMS)
         self.alg_menu.grid(row=0, column=1, padx=5, pady=5)
-        self.alg_menu.current()
+        self.alg_menu.current(0)
 
         self.speed_scale = Scale(self.frame, from_=0.1, to=2.0, length=200, digits=2, resolution=0.1, orient=HORIZONTAL,
                                  label="Speed selection")
@@ -54,19 +62,25 @@ class Screen:
         self.generate_but = Button(self.frame, text="Generate", command=self.generate_arr, bg='white')
         self.generate_but.grid(row=1, column=3, padx=5, pady=5)
 
+        self.logger.info("Screen set. Maintaining...")
         self.window.mainloop()
+
+        self.logger.info("Program closed.")
 
     def generate_arr(self) -> None:
         """Generate random array with set limits"""
+        self.logger.debug("Generating random array...")
         min_val = int(self.min_scale.get())
         max_val = int(self.max_scale.get())
         size = int(self.size_scale.get())
         self.data = [randrange(min_val, max_val) for _ in range(size)]      # generate random array
 
+        self.logger.debug("Random array generated.")
         self.data_visualize(['red' for _ in self.data])
 
     def data_visualize(self, colors: List, data: None | List = None) -> None:
         """Redraw columns"""
+        self.logger.debug("Redrawing columns...")
         if data is not None:
             self.data = data
         self.canvas.delete("all")
@@ -83,9 +97,13 @@ class Screen:
             self.canvas.create_rectangle(x0, y0, x1, y1, fill=color)        # create column
             text_pos = x0 + ((x1 - x0) // 2)
             self.canvas.create_text(text_pos, y0 - 7, anchor=CENTER, text=value)
+        self.logger.debug("Columns redrawn.")
 
         self.window.update_idletasks()      # update drawing
 
     def start_algorithm(self) -> None:
         """Starting algorithm"""
-        bubble_sort(self.data, self.data_visualize, self.speed_scale.get())
+        if self.alg_menu.get() == "Bubble Sort":
+            self.logger.debug("Start bubble sort...")
+            bubble_sort(self.data, self.data_visualize, self.speed_scale.get())
+            self.logger.debug("Bubble sort complete.")
