@@ -5,7 +5,7 @@ from logging import config
 # TODO reverse order
 
 
-def bubble_sort(array: List, visualize: Callable, time_tick: float) -> None:
+def bubble_sort(array: List, visualize: Callable, time_tick: float) -> List:
     """Sort given array with bubble sort algorithm. Complexity(worst and average): O(n^2)"""
     logging.config.fileConfig("logging.conf")  # Use logger config
     logger = logging.getLogger(__name__)  # Create logger
@@ -25,3 +25,4 @@ def bubble_sort(array: List, visualize: Callable, time_tick: float) -> None:
             break
     logger.debug("Bubble sort end.")
     visualize(['green' for _ in range(array_len)], array)
+    return array    # return sorted array for unit tests
