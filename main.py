@@ -7,6 +7,8 @@ __author__ = "Aleksandr Verevkin"
 __licence__ = "GPL 3.0"
 __status__ = "production"
 from screen import Screen
+# TODO reverse orders
+# TODO rainbow at the end
 
 
 def main():

@@ -20,33 +20,33 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.arr9 = [100, 50, 0]
         self.arr10 = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]
         self.arr11 = []
+        self.mockup_func = lambda a, b: None
 
     def test_bubble_sort(self):
-        mockup_func = lambda a, b: None
-        self.assertEqual(bubble_sort(self.arr1, mockup_func, 0), sorted(self.arr1))
-        self.assertEqual(bubble_sort(self.arr2, mockup_func, 0), sorted(self.arr2))
-        self.assertEqual(bubble_sort(self.arr3, mockup_func, 0), sorted(self.arr3))
-        self.assertEqual(bubble_sort(self.arr4, mockup_func, 0), sorted(self.arr4))
-        self.assertEqual(bubble_sort(self.arr5, mockup_func, 0), sorted(self.arr5))
-        self.assertEqual(bubble_sort(self.arr6, mockup_func, 0), sorted(self.arr6))
-        self.assertEqual(bubble_sort(self.arr7, mockup_func, 0), sorted(self.arr7))
-        self.assertEqual(bubble_sort(self.arr8, mockup_func, 0), sorted(self.arr8))
-        self.assertEqual(bubble_sort(self.arr9, mockup_func, 0), sorted(self.arr9))
-        self.assertEqual(bubble_sort(self.arr10, mockup_func, 0), sorted(self.arr10))
-        self.assertEqual(bubble_sort(self.arr11, mockup_func, 0), sorted(self.arr11))
+        self.assertEqual(bubble_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
+        self.assertEqual(bubble_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))
+        self.assertEqual(bubble_sort(self.arr3, self.mockup_func, 0), sorted(self.arr3))
+        self.assertEqual(bubble_sort(self.arr4, self.mockup_func, 0), sorted(self.arr4))
+        self.assertEqual(bubble_sort(self.arr5, self.mockup_func, 0), sorted(self.arr5))
+        self.assertEqual(bubble_sort(self.arr6, self.mockup_func, 0), sorted(self.arr6))
+        self.assertEqual(bubble_sort(self.arr7, self.mockup_func, 0), sorted(self.arr7))
+        self.assertEqual(bubble_sort(self.arr8, self.mockup_func, 0), sorted(self.arr8))
+        self.assertEqual(bubble_sort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
+        self.assertEqual(bubble_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
+        self.assertEqual(bubble_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
 
     def test_quicksort(self):
-        self.assertEqual(quicksort(self.arr1), sorted(self.arr1))
-        self.assertEqual(quicksort(self.arr2), sorted(self.arr2))
-        self.assertEqual(quicksort(self.arr3), sorted(self.arr3))
-        self.assertEqual(quicksort(self.arr4), sorted(self.arr4))
-        self.assertEqual(quicksort(self.arr5), sorted(self.arr5))
-        self.assertEqual(quicksort(self.arr6), sorted(self.arr6))
-        self.assertEqual(quicksort(self.arr7), sorted(self.arr7))
-        self.assertEqual(quicksort(self.arr8), sorted(self.arr8))
-        self.assertEqual(quicksort(self.arr9), sorted(self.arr9))
-        self.assertEqual(quicksort(self.arr10), sorted(self.arr10))
-        self.assertEqual(quicksort(self.arr11), sorted(self.arr11))
+        self.assertEqual(quicksort(self.arr1, 0, len(self.arr1) - 1, self.mockup_func, 0), sorted(self.arr1))
+        self.assertEqual(quicksort(self.arr2, 0, len(self.arr2) - 1, self.mockup_func, 0), sorted(self.arr2))
+        self.assertEqual(quicksort(self.arr3, 0, len(self.arr3) - 1, self.mockup_func, 0), sorted(self.arr3))
+        self.assertEqual(quicksort(self.arr4, 0, len(self.arr4) - 1, self.mockup_func, 0), sorted(self.arr4))
+        self.assertEqual(quicksort(self.arr5, 0, len(self.arr5) - 1, self.mockup_func, 0), sorted(self.arr5))
+        self.assertEqual(quicksort(self.arr6, 0, len(self.arr6) - 1, self.mockup_func, 0), sorted(self.arr6))
+        self.assertEqual(quicksort(self.arr7, 0, len(self.arr7) - 1, self.mockup_func, 0), sorted(self.arr7))
+        self.assertEqual(quicksort(self.arr8, 0, len(self.arr8) - 1, self.mockup_func, 0), sorted(self.arr8))
+        self.assertEqual(quicksort(self.arr9, 0, len(self.arr9) - 1, self.mockup_func, 0), sorted(self.arr9))
+        self.assertEqual(quicksort(self.arr10, 0, len(self.arr10) - 1, self.mockup_func, 0), sorted(self.arr10))
+        self.assertEqual(quicksort(self.arr11, 0, len(self.arr11) - 1, self.mockup_func, 0), sorted(self.arr11))
 
     def test_merge_sort(self):
         self.assertEqual(merge_sort(self.arr1), sorted(self.arr1))

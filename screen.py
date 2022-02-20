@@ -5,13 +5,19 @@ from typing import List
 import logging
 from logging import config
 from bubblesort import bubble_sort
+from quicksort import quicksort
+from mergesort import merge_sort
 # TODO UI
 
 
 class Screen:
     WINDOW_HEIGHT = 900
     WINDOW_WIDTH = 600
-    BACKGROUND_COLOR = "grey"
+    BLUE = "#A2CDCD"
+    RED = "#D57E7E"
+    GREEN = "#C6D57E"
+    YELLOW = "#FFE1AF"
+    BACKGROUND_COLOR = BLUE
     HEADER_HEIGHT = 200
     HEADER_WIDTH = WINDOW_WIDTH
     CANVAS_HEIGHT = 380
@@ -34,10 +40,10 @@ class Screen:
         self.frame = Frame(self.window, width=600, height=200, bg=self.BACKGROUND_COLOR)
         self.frame.grid(row=0, column=0, padx=10, pady=5)
 
-        self.canvas = Canvas(self.window, width=self.CANVAS_WIDTH, height=self.CANVAS_HEIGHT, bg="white")
+        self.canvas = Canvas(self.window, width=self.CANVAS_WIDTH, height=self.CANVAS_HEIGHT, bg="#FFE1AF")
         self.canvas.grid(row=1, column=0, padx=10, pady=5)
 
-        alg_label = Label(self.frame, text="Algorithm: ", bg='grey')
+        alg_label = Label(self.frame, text="Algorithm: ", bg=self.BACKGROUND_COLOR)
         alg_label.grid(row=0, column=0, padx=5, pady=5)
 
         self.alg_menu = ttk.Combobox(self.frame, textvariable=self.algorithm, values=self.ALGORITHMS)
@@ -47,7 +53,7 @@ class Screen:
         self.speed_scale = Scale(self.frame, from_=0.1, to=2.0, length=200, digits=2, resolution=0.1, orient=HORIZONTAL,
                                  label="Speed selection")
         self.speed_scale.grid(row=0, column=2, padx=5, pady=5)
-        self.start_but = Button(self.frame, text="Start", command=self.start_algorithm, bg='red')
+        self.start_but = Button(self.frame, text="Start", command=self.start_algorithm, bg=self.RED)
         self.start_but.grid(row=0, column=3, padx=5, pady=5)
 
         self.size_scale = Scale(self.frame, from_=3, to=30, resolution=1, orient=HORIZONTAL, label="Data Size")
@@ -76,7 +82,7 @@ class Screen:
         self.data = [randrange(min_val, max_val) for _ in range(size)]      # generate random array
 
         self.logger.debug("Random array generated.")
-        self.data_visualize(['red' for _ in self.data])
+        self.data_visualize([self.BLUE for _ in self.data])
 
     def data_visualize(self, colors: List, data: None | List = None) -> None:
         """Redraw columns"""
@@ -106,4 +112,10 @@ class Screen:
         if self.alg_menu.get() == "Bubble Sort":
             self.logger.debug("Start bubble sort...")
             bubble_sort(self.data, self.data_visualize, self.speed_scale.get())
+            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
             self.logger.debug("Bubble sort complete.")
+        elif self.alg_menu.get() == "Quicksort":
+            self.logger.debug("Start quicksort...")
+            quicksort(self.data, 0, len(self.data) - 1, self.data_visualize, self.speed_scale.get())
+            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+            self.logger.debug("Quicksort complete.")
