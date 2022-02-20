@@ -22,7 +22,7 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.arr11 = []
         self.mockup_func = lambda a, b: None
 
-    def test_bubble_sort(self):
+    def test_bubble_sort(self) -> None:
         self.assertEqual(bubble_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
         self.assertEqual(bubble_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))
         self.assertEqual(bubble_sort(self.arr3, self.mockup_func, 0), sorted(self.arr3))
@@ -35,7 +35,7 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.assertEqual(bubble_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
         self.assertEqual(bubble_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
 
-    def test_quicksort(self):
+    def test_quicksort(self) -> None:
         self.assertEqual(quicksort(self.arr1, 0, len(self.arr1) - 1, self.mockup_func, 0), sorted(self.arr1))
         self.assertEqual(quicksort(self.arr2, 0, len(self.arr2) - 1, self.mockup_func, 0), sorted(self.arr2))
         self.assertEqual(quicksort(self.arr3, 0, len(self.arr3) - 1, self.mockup_func, 0), sorted(self.arr3))
@@ -48,7 +48,7 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.assertEqual(quicksort(self.arr10, 0, len(self.arr10) - 1, self.mockup_func, 0), sorted(self.arr10))
         self.assertEqual(quicksort(self.arr11, 0, len(self.arr11) - 1, self.mockup_func, 0), sorted(self.arr11))
 
-    def test_merge_sort(self):
+    def test_merge_sort(self) -> None:
         self.assertEqual(merge_sort(self.arr1), sorted(self.arr1))
         self.assertEqual(merge_sort(self.arr2), sorted(self.arr2))
         self.assertEqual(merge_sort(self.arr3), sorted(self.arr3))

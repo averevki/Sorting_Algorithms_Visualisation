@@ -7,7 +7,6 @@ from logging import config
 from bubblesort import bubble_sort
 from quicksort import quicksort
 from mergesort import merge_sort
-# TODO UI
 
 
 class Screen:

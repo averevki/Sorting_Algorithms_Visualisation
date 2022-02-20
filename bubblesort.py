@@ -3,9 +3,14 @@ from typing import List, Callable
 import logging
 from logging import config
 
+"""Bubble sort algorithm.
+Complexity: worst:   O(n^2)
+            average: O(n^2)
+            best:    O(n)
+"""
 
 def bubble_sort(array: List, visualize: Callable, time_tick: float) -> List:
-    """Sort given array with bubble sort algorithm. Complexity(worst and average): O(n^2)"""
+    """Sort given array with bubble sort algorithm."""
     logging.config.fileConfig("logging.conf")  # Use logger config
     logger = logging.getLogger(__name__)  # Create logger
 
