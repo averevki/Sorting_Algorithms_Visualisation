@@ -13,7 +13,7 @@ from screen import Screen
 # TODO rainbow at the end
 
 
-def main():
+def main() -> None:
     Screen()
 
 

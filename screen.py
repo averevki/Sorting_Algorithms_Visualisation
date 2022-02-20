@@ -78,7 +78,7 @@ class Screen:
         min_val = int(self.min_scale.get())
         max_val = int(self.max_scale.get())
         size = int(self.size_scale.get())
-        self.data = [randrange(min_val, max_val) for _ in range(size)]      # generate random array
+        self.data = [randrange(min_val, max_val + 1) for _ in range(size)]      # generate random array
 
         self.logger.debug("Random array generated.")
         self.data_visualize([self.BLUE for _ in self.data])
@@ -116,5 +116,10 @@ class Screen:
         elif self.alg_menu.get() == "Quicksort":
             self.logger.debug("Start quicksort...")
             quicksort(self.data, 0, len(self.data) - 1, self.data_visualize, self.speed_scale.get())
+            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+            self.logger.debug("Quicksort complete.")
+        elif self.alg_menu.get() == "Merge Sort":
+            self.logger.debug("Start quicksort...")
+            merge_sort(self.data, self.data_visualize, self.speed_scale.get(), 0, len(self.data) - 1)
             self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
             self.logger.debug("Quicksort complete.")

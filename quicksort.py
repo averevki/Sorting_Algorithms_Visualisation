@@ -1,7 +1,5 @@
 from time import sleep
 from typing import List, Callable
-import logging
-from logging import config
 
 """Quicksort algorithm.
 Complexity: worst:   O(n^2)
@@ -10,7 +8,7 @@ Complexity: worst:   O(n^2)
 """
 
 
-def visualize_part(array: List, left: int, high: int, i: int, visualize: Callable, time_tick: float) -> None:
+def visualize_part(array: List, left: int, high: int, i: int, visualize: Callable, speed: float) -> None:
     """Reload columns and visualization colors"""
     colors = []
     for j in range(len(array)):
@@ -21,10 +19,10 @@ def visualize_part(array: List, left: int, high: int, i: int, visualize: Callabl
         else:
             colors.append("#A2CDCD")
     visualize(colors, array)
-    sleep(time_tick)
+    sleep(speed)
 
 
-def partition(array: List, low: int, high: int, visualize: Callable, time_tick: float) -> int:
+def partition(array: List, low: int, high: int, visualize: Callable, speed: float) -> int:
     """Quicksort partition algorithm"""
     left = low  # boarder
     pivot = array[high]  # pivot
@@ -32,15 +30,15 @@ def partition(array: List, low: int, high: int, visualize: Callable, time_tick: 
         if array[i] < pivot:
             array[left], array[i] = array[i], array[left]
             left += 1
-        visualize_part(array, left, high, i, visualize, time_tick)  # visualization, reload colors
+        visualize_part(array, left, high, i, visualize, speed)  # visualization, reload colors
     array[left], array[high] = array[high], array[left]
     return left
 
 
-def quicksort(array: List, low: int, high: int, visualize: Callable, time_tick: float) -> List:
+def quicksort(array: List, low: int, high: int, visualize: Callable, speed: float) -> List:
     """Sort given array with quicksort algorithm"""
     if low < high:
-        pindex = partition(array, low, high, visualize, time_tick)  # get partition index
-        quicksort(array, low, pindex - 1, visualize, time_tick)     # sort left half
-        quicksort(array, pindex + 1, high, visualize, time_tick)    # sort right half
+        pindex = partition(array, low, high, visualize, speed)  # get partition index
+        quicksort(array, low, pindex - 1, visualize, speed)     # sort left half
+        quicksort(array, pindex + 1, high, visualize, speed)    # sort right half
     return array  # return sorted array for unit tests

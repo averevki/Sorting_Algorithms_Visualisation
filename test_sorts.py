@@ -7,7 +7,6 @@ from mergesort import merge_sort
 
 
 class TestSortingAlgorithms(unittest.TestCase):
-
     def setUp(self) -> None:
         self.arr1 = [8, 9, 5, 10, 8, 1, 5, 6, 5, 1]
         self.arr2 = [7, 7, 4, 1, 5, 6, 10, 4, 7, 5]
@@ -49,17 +48,17 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.assertEqual(quicksort(self.arr11, 0, len(self.arr11) - 1, self.mockup_func, 0), sorted(self.arr11))
 
     def test_merge_sort(self) -> None:
-        self.assertEqual(merge_sort(self.arr1), sorted(self.arr1))
-        self.assertEqual(merge_sort(self.arr2), sorted(self.arr2))
-        self.assertEqual(merge_sort(self.arr3), sorted(self.arr3))
-        self.assertEqual(merge_sort(self.arr4), sorted(self.arr4))
-        self.assertEqual(merge_sort(self.arr5), sorted(self.arr5))
-        self.assertEqual(merge_sort(self.arr6), sorted(self.arr6))
-        self.assertEqual(merge_sort(self.arr7), sorted(self.arr7))
-        self.assertEqual(merge_sort(self.arr8), sorted(self.arr8))
-        self.assertEqual(merge_sort(self.arr9), sorted(self.arr9))
-        self.assertEqual(merge_sort(self.arr10), sorted(self.arr10))
-        self.assertEqual(merge_sort(self.arr11), sorted(self.arr11))
+        self.assertEqual(merge_sort(self.arr1, self.mockup_func, 0, 0, len(self.arr1) - 1), sorted(self.arr1))
+        self.assertEqual(merge_sort(self.arr2, self.mockup_func, 0, 0, len(self.arr2) - 1), sorted(self.arr2))
+        self.assertEqual(merge_sort(self.arr3, self.mockup_func, 0, 0, len(self.arr3) - 1), sorted(self.arr3))
+        self.assertEqual(merge_sort(self.arr4, self.mockup_func, 0, 0, len(self.arr4) - 1), sorted(self.arr4))
+        self.assertEqual(merge_sort(self.arr5, self.mockup_func, 0, 0, len(self.arr5) - 1), sorted(self.arr5))
+        self.assertEqual(merge_sort(self.arr6, self.mockup_func, 0, 0, len(self.arr6) - 1), sorted(self.arr6))
+        self.assertEqual(merge_sort(self.arr7, self.mockup_func, 0, 0, len(self.arr7) - 1), sorted(self.arr7))
+        self.assertEqual(merge_sort(self.arr8, self.mockup_func, 0, 0, len(self.arr8) - 1), sorted(self.arr8))
+        self.assertEqual(merge_sort(self.arr9, self.mockup_func, 0, 0, len(self.arr9) - 1), sorted(self.arr9))
+        self.assertEqual(merge_sort(self.arr10, self.mockup_func, 0, 0, len(self.arr10) - 1), sorted(self.arr10))
+        self.assertEqual(merge_sort(self.arr11, self.mockup_func, 0, 0, len(self.arr11) - 1), sorted(self.arr11))
 
 
 if __name__ == '__main__':

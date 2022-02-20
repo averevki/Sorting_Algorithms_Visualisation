@@ -9,7 +9,8 @@ Complexity: worst:   O(n^2)
             best:    O(n)
 """
 
-def bubble_sort(array: List, visualize: Callable, time_tick: float) -> List:
+
+def bubble_sort(array: List, visualize: Callable, speed: float) -> List:
     """Sort given array with bubble sort algorithm."""
     logging.config.fileConfig("logging.conf")  # Use logger config
     logger = logging.getLogger(__name__)  # Create logger
@@ -24,7 +25,7 @@ def bubble_sort(array: List, visualize: Callable, time_tick: float) -> List:
                 swapped = True
                 logger.debug("Bubble sort swap.")
             visualize(["#C6D57E" if i == j or i == j + 1 else "#A2CDCD" for i in range(array_len)], array)
-            sleep(time_tick)
+            sleep(speed)
         if not swapped:
             break
     logger.debug("Bubble sort end.")
