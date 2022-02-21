@@ -4,6 +4,8 @@ import unittest
 from bubblesort import bubble_sort
 from quicksort import quicksort
 from mergesort import merge_sort
+from selectionsort import selection_sort
+from heapsort import heap_sort
 
 
 class TestSortingAlgorithms(unittest.TestCase):
@@ -20,6 +22,19 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.arr10 = [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]
         self.arr11 = []
         self.mockup_func = lambda a, b: None
+
+    def test_selection_sort(self) -> None:
+        self.assertEqual(selection_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
+        self.assertEqual(selection_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))
+        self.assertEqual(selection_sort(self.arr3, self.mockup_func, 0), sorted(self.arr3))
+        self.assertEqual(selection_sort(self.arr4, self.mockup_func, 0), sorted(self.arr4))
+        self.assertEqual(selection_sort(self.arr5, self.mockup_func, 0), sorted(self.arr5))
+        self.assertEqual(selection_sort(self.arr6, self.mockup_func, 0), sorted(self.arr6))
+        self.assertEqual(selection_sort(self.arr7, self.mockup_func, 0), sorted(self.arr7))
+        self.assertEqual(selection_sort(self.arr8, self.mockup_func, 0), sorted(self.arr8))
+        self.assertEqual(selection_sort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
+        self.assertEqual(selection_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
+        self.assertEqual(selection_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
 
     def test_bubble_sort(self) -> None:
         self.assertEqual(bubble_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
@@ -59,6 +74,19 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.assertEqual(merge_sort(self.arr9, self.mockup_func, 0, 0, len(self.arr9) - 1), sorted(self.arr9))
         self.assertEqual(merge_sort(self.arr10, self.mockup_func, 0, 0, len(self.arr10) - 1), sorted(self.arr10))
         self.assertEqual(merge_sort(self.arr11, self.mockup_func, 0, 0, len(self.arr11) - 1), sorted(self.arr11))
+
+    def test_heap_sort(self) -> None:
+        self.assertEqual(heap_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
+        self.assertEqual(heap_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))
+        self.assertEqual(heap_sort(self.arr3, self.mockup_func, 0), sorted(self.arr3))
+        self.assertEqual(heap_sort(self.arr4, self.mockup_func, 0), sorted(self.arr4))
+        self.assertEqual(heap_sort(self.arr5, self.mockup_func, 0), sorted(self.arr5))
+        self.assertEqual(heap_sort(self.arr6, self.mockup_func, 0), sorted(self.arr6))
+        self.assertEqual(heap_sort(self.arr7, self.mockup_func, 0), sorted(self.arr7))
+        self.assertEqual(heap_sort(self.arr8, self.mockup_func, 0), sorted(self.arr8))
+        self.assertEqual(heap_sort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
+        self.assertEqual(heap_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
+        self.assertEqual(heap_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
 
 
 if __name__ == '__main__':

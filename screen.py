@@ -7,6 +7,8 @@ from logging import config
 from bubblesort import bubble_sort
 from quicksort import quicksort
 from mergesort import merge_sort
+from selectionsort import selection_sort
+from heapsort import heap_sort
 
 
 class Screen:
@@ -22,7 +24,7 @@ class Screen:
     CANVAS_HEIGHT = 380
     CANVAS_WIDTH = WINDOW_WIDTH
     SPACING = 5
-    ALGORITHMS = ["Bubble Sort", "Merge Sort", "Quicksort"]
+    ALGORITHMS = ["Selection Sort", "Bubble Sort", "Merge Sort", "Heap Sort" "Quicksort"]
 
     def __init__(self) -> None:
         logging.config.fileConfig("logging.conf")  # Use logger config
@@ -108,18 +110,28 @@ class Screen:
 
     def start_algorithm(self) -> None:
         """Starting algorithm"""
-        if self.alg_menu.get() == "Bubble Sort":
-            self.logger.debug("Start bubble sort...")
+        if self.alg_menu.get() == "Selection Sort":
+            self.logger.debug("Starting selection sort...")
+            selection_sort(self.data, self.data_visualize, self.speed_scale.get())
+            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+            self.logger.debug("Selection sort complete.")
+        elif self.alg_menu.get() == "Bubble Sort":
+            self.logger.debug("Starting bubble sort...")
             bubble_sort(self.data, self.data_visualize, self.speed_scale.get())
             self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
             self.logger.debug("Bubble sort complete.")
-        elif self.alg_menu.get() == "Quicksort":
-            self.logger.debug("Start quicksort...")
-            quicksort(self.data, 0, len(self.data) - 1, self.data_visualize, self.speed_scale.get())
+        elif self.alg_menu.get() == "Heap Sort":
+            self.logger.debug("Starting heap sort...")
+            heap_sort(self.data, self.data_visualize, self.speed_scale.get())
+            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+            self.logger.debug("Heap sort complete.")
+        elif self.alg_menu.get() == "Merge Sort":
+            self.logger.debug("Starting quicksort...")
+            merge_sort(self.data, self.data_visualize, self.speed_scale.get(), 0, len(self.data) - 1)
             self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
             self.logger.debug("Quicksort complete.")
-        elif self.alg_menu.get() == "Merge Sort":
-            self.logger.debug("Start quicksort...")
-            merge_sort(self.data, self.data_visualize, self.speed_scale.get(), 0, len(self.data) - 1)
+        elif self.alg_menu.get() == "Quicksort":
+            self.logger.debug("Starting quicksort...")
+            quicksort(self.data, 0, len(self.data) - 1, self.data_visualize, self.speed_scale.get())
             self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
             self.logger.debug("Quicksort complete.")
