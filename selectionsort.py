@@ -30,8 +30,8 @@ def selection_sort(array: List, visualize: Callable, speed: float) -> List:
         visualize(["#D57E7E" if k == i else "#A2CDCD" for k in range(arr_len)], array)
         sleep(speed)
         for j in range(i + 1, arr_len):
-            if array[min_i] > array[j]:
+            if array[min_i] > array[j]:     # set pointer element as new minimum if it's lesser than current min
                 min_i = j
             visualize_selection(array, i, j, min_i, visualize, speed)
-        array[i], array[min_i] = array[min_i], array[i]     # Swap first element with minimum element
+        array[i], array[min_i] = array[min_i], array[i]     # swap first element with minimum element
     return array  # return sorted array for unit tests
