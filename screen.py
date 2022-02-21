@@ -24,7 +24,7 @@ class Screen:
     CANVAS_HEIGHT = 380
     CANVAS_WIDTH = WINDOW_WIDTH
     SPACING = 5
-    ALGORITHMS = ["Selection Sort", "Bubble Sort", "Merge Sort", "Heap Sort" "Quicksort"]
+    ALGORITHMS = ["Selection Sort", "Bubble Sort", "Merge Sort", "Heap Sort", "Quicksort"]
 
     def __init__(self) -> None:
         logging.config.fileConfig("logging.conf")  # Use logger config
@@ -126,10 +126,10 @@ class Screen:
             self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
             self.logger.debug("Heap sort complete.")
         elif self.alg_menu.get() == "Merge Sort":
-            self.logger.debug("Starting quicksort...")
+            self.logger.debug("Starting merge sort...")
             merge_sort(self.data, self.data_visualize, self.speed_scale.get(), 0, len(self.data) - 1)
             self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
-            self.logger.debug("Quicksort complete.")
+            self.logger.debug("Merge sort complete.")
         elif self.alg_menu.get() == "Quicksort":
             self.logger.debug("Starting quicksort...")
             quicksort(self.data, 0, len(self.data) - 1, self.data_visualize, self.speed_scale.get())

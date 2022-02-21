@@ -15,16 +15,16 @@ def visualize_merge(array: List, left_i: int, mid: int, right_i: int, visualize:
     for z in range(len(array)):
         if left_i <= z <= right_i:
             if z in green_indexes:
-                colors.append("#C6D57E")
+                colors.append("#C6D57E")    # green
             elif z in red_indexes:
-                colors.append("#D57E7E")
+                colors.append("#D57E7E")    # red
             else:
                 if left_i <= z <= mid:
-                    colors.append("#C6D57E")
+                    colors.append("#C6D57E")    # green
                 else:
-                    colors.append("#D57E7E")
+                    colors.append("#D57E7E")    # red
         else:
-            colors.append("#A2CDCD")
+            colors.append("#A2CDCD")    # blue
     visualize(colors, array)
     sleep(speed)
     red_indexes.clear()

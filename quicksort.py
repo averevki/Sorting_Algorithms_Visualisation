@@ -13,11 +13,11 @@ def visualize_part(array: List, left: int, high: int, i: int, visualize: Callabl
     colors = []
     for j in range(len(array)):
         if j == left or j == i:
-            colors.append("#C6D57E")
+            colors.append("#C6D57E")    # green
         elif j == high:
-            colors.append("#D57E7E")
+            colors.append("#D57E7E")    # red
         else:
-            colors.append("#A2CDCD")
+            colors.append("#A2CDCD")    # blue
     visualize(colors, array)
     sleep(speed)
 
