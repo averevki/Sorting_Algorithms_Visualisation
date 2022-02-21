@@ -8,7 +8,7 @@ from bubblesort import bubble_sort
 from quicksort import quicksort
 from mergesort import merge_sort
 from selectionsort import selection_sort
-from heapsort import heap_sort
+from heapsort import heapsort
 
 
 class Screen:
@@ -122,7 +122,7 @@ class Screen:
             self.logger.debug("Bubble sort complete.")
         elif self.alg_menu.get() == "Heap Sort":
             self.logger.debug("Starting heap sort...")
-            heap_sort(self.data, self.data_visualize, self.speed_scale.get())
+            heapsort(self.data, self.data_visualize, self.speed_scale.get())
             self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
             self.logger.debug("Heap sort complete.")
         elif self.alg_menu.get() == "Merge Sort":
