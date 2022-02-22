@@ -6,6 +6,11 @@ from quicksort import quicksort
 from mergesort import merge_sort
 from selectionsort import selection_sort
 from heapsort import heapsort
+from shellsort import shell_sort
+from insertionsort import insertion_sort
+from radixsort import radix_sort
+from combsort import comb_sort
+from cocktailsort import cocktail_sort
 
 
 class TestSortingAlgorithms(unittest.TestCase):
@@ -87,6 +92,71 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.assertEqual(heapsort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
         self.assertEqual(heapsort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
         self.assertEqual(heapsort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
+    #
+    def test_shell_sort(self) -> None:
+        self.assertEqual(shell_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
+        self.assertEqual(shell_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))
+        self.assertEqual(shell_sort(self.arr3, self.mockup_func, 0), sorted(self.arr3))
+        self.assertEqual(shell_sort(self.arr4, self.mockup_func, 0), sorted(self.arr4))
+        self.assertEqual(shell_sort(self.arr5, self.mockup_func, 0), sorted(self.arr5))
+        self.assertEqual(shell_sort(self.arr6, self.mockup_func, 0), sorted(self.arr6))
+        self.assertEqual(shell_sort(self.arr7, self.mockup_func, 0), sorted(self.arr7))
+        self.assertEqual(shell_sort(self.arr8, self.mockup_func, 0), sorted(self.arr8))
+        self.assertEqual(shell_sort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
+        self.assertEqual(shell_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
+        self.assertEqual(shell_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
+
+    def test_insertion_sort(self) -> None:
+        self.assertEqual(insertion_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
+        self.assertEqual(insertion_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))
+        self.assertEqual(insertion_sort(self.arr3, self.mockup_func, 0), sorted(self.arr3))
+        self.assertEqual(insertion_sort(self.arr4, self.mockup_func, 0), sorted(self.arr4))
+        self.assertEqual(insertion_sort(self.arr5, self.mockup_func, 0), sorted(self.arr5))
+        self.assertEqual(insertion_sort(self.arr6, self.mockup_func, 0), sorted(self.arr6))
+        self.assertEqual(insertion_sort(self.arr7, self.mockup_func, 0), sorted(self.arr7))
+        self.assertEqual(insertion_sort(self.arr8, self.mockup_func, 0), sorted(self.arr8))
+        self.assertEqual(insertion_sort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
+        self.assertEqual(insertion_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
+        self.assertEqual(insertion_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
+
+    def test_radix_sort(self) -> None:
+        self.assertEqual(radix_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
+        self.assertEqual(radix_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))
+        self.assertEqual(radix_sort(self.arr3, self.mockup_func, 0), sorted(self.arr3))
+        self.assertEqual(radix_sort(self.arr4, self.mockup_func, 0), sorted(self.arr4))
+        self.assertEqual(radix_sort(self.arr5, self.mockup_func, 0), sorted(self.arr5))
+        self.assertEqual(radix_sort(self.arr6, self.mockup_func, 0), sorted(self.arr6))
+        self.assertEqual(radix_sort(self.arr7, self.mockup_func, 0), sorted(self.arr7))
+        self.assertEqual(radix_sort(self.arr8, self.mockup_func, 0), sorted(self.arr8))
+        self.assertEqual(radix_sort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
+        self.assertEqual(radix_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
+        self.assertEqual(radix_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
+
+    def test_comb_sort(self) -> None:
+        self.assertEqual(comb_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
+        self.assertEqual(comb_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))
+        self.assertEqual(comb_sort(self.arr3, self.mockup_func, 0), sorted(self.arr3))
+        self.assertEqual(comb_sort(self.arr4, self.mockup_func, 0), sorted(self.arr4))
+        self.assertEqual(comb_sort(self.arr5, self.mockup_func, 0), sorted(self.arr5))
+        self.assertEqual(comb_sort(self.arr6, self.mockup_func, 0), sorted(self.arr6))
+        self.assertEqual(comb_sort(self.arr7, self.mockup_func, 0), sorted(self.arr7))
+        self.assertEqual(comb_sort(self.arr8, self.mockup_func, 0), sorted(self.arr8))
+        self.assertEqual(comb_sort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
+        self.assertEqual(comb_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
+        self.assertEqual(comb_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
+
+    def test_cocktail_sort(self) -> None:
+        self.assertEqual(cocktail_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
+        self.assertEqual(cocktail_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))
+        self.assertEqual(cocktail_sort(self.arr3, self.mockup_func, 0), sorted(self.arr3))
+        self.assertEqual(cocktail_sort(self.arr4, self.mockup_func, 0), sorted(self.arr4))
+        self.assertEqual(cocktail_sort(self.arr5, self.mockup_func, 0), sorted(self.arr5))
+        self.assertEqual(cocktail_sort(self.arr6, self.mockup_func, 0), sorted(self.arr6))
+        self.assertEqual(cocktail_sort(self.arr7, self.mockup_func, 0), sorted(self.arr7))
+        self.assertEqual(cocktail_sort(self.arr8, self.mockup_func, 0), sorted(self.arr8))
+        self.assertEqual(cocktail_sort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
+        self.assertEqual(cocktail_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
+        self.assertEqual(cocktail_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
 
 
 if __name__ == '__main__':

@@ -9,6 +9,11 @@ from quicksort import quicksort
 from mergesort import merge_sort
 from selectionsort import selection_sort
 from heapsort import heapsort
+from shellsort import shell_sort
+from insertionsort import insertion_sort
+from radixsort import radix_sort
+from combsort import comb_sort
+from cocktailsort import cocktail_sort
 
 
 class Screen:
@@ -24,7 +29,8 @@ class Screen:
     CANVAS_HEIGHT = 380
     CANVAS_WIDTH = WINDOW_WIDTH
     SPACING = 5
-    ALGORITHMS = ["Selection Sort", "Bubble Sort", "Merge Sort", "Heap Sort", "Quicksort"]
+    ALGORITHMS = ["Selection Sort", "Bubble Sort", "Merge Sort", "Heap Sort", "Quicksort", "Shell sort",
+                  "Insertion Sort", "Radix Sort", "Comb Sort", "Cocktail Shaker Sort"]
 
     def __init__(self) -> None:
         logging.config.fileConfig("logging.conf")  # Use logger config
@@ -110,28 +116,54 @@ class Screen:
 
     def start_algorithm(self) -> None:
         """Starting algorithm"""
-        if self.alg_menu.get() == "Selection Sort":
-            self.logger.debug("Starting selection sort...")
-            selection_sort(self.data, self.data_visualize, self.speed_scale.get())
-            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
-            self.logger.debug("Selection sort complete.")
-        elif self.alg_menu.get() == "Bubble Sort":
-            self.logger.debug("Starting bubble sort...")
-            bubble_sort(self.data, self.data_visualize, self.speed_scale.get())
-            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
-            self.logger.debug("Bubble sort complete.")
-        elif self.alg_menu.get() == "Heap Sort":
-            self.logger.debug("Starting heap sort...")
-            heapsort(self.data, self.data_visualize, self.speed_scale.get())
-            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
-            self.logger.debug("Heap sort complete.")
-        elif self.alg_menu.get() == "Merge Sort":
-            self.logger.debug("Starting merge sort...")
-            merge_sort(self.data, self.data_visualize, self.speed_scale.get(), 0, len(self.data) - 1)
-            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
-            self.logger.debug("Merge sort complete.")
-        elif self.alg_menu.get() == "Quicksort":
-            self.logger.debug("Starting quicksort...")
-            quicksort(self.data, 0, len(self.data) - 1, self.data_visualize, self.speed_scale.get())
-            self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
-            self.logger.debug("Quicksort complete.")
+        match self.alg_menu.get():
+            case "Selection Sort":
+                self.logger.debug("Starting selection sort...")
+                selection_sort(self.data, self.data_visualize, self.speed_scale.get())
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Selection sort complete.")
+            case "Bubble Sort":
+                self.logger.debug("Starting bubble sort...")
+                bubble_sort(self.data, self.data_visualize, self.speed_scale.get())
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Bubble sort complete.")
+            case "Heap Sort":
+                self.logger.debug("Starting heap sort...")
+                heapsort(self.data, self.data_visualize, self.speed_scale.get())
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Heap sort complete.")
+            case "Merge Sort":
+                self.logger.debug("Starting merge sort...")
+                merge_sort(self.data, self.data_visualize, self.speed_scale.get(), 0, len(self.data) - 1)
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Merge sort complete.")
+            case "Quicksort":
+                self.logger.debug("Starting quicksort...")
+                quicksort(self.data, 0, len(self.data) - 1, self.data_visualize, self.speed_scale.get())
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Quicksort complete.")
+            case "Shell Sort":
+                self.logger.debug("Starting shell sort...")
+                shell_sort(self.data, self.data_visualize, self.speed_scale.get())
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Shell sort complete.")
+            case "Insertion Sort":
+                self.logger.debug("Starting insertion sort...")
+                insertion_sort(self.data, self.data_visualize, self.speed_scale.get())
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Insertion sort complete.")
+            case "Radix Sort":
+                self.logger.debug("Starting radix sort...")
+                radix_sort(self.data, self.data_visualize, self.speed_scale.get())
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Radix sort complete.")
+            case "Comb Sort":
+                self.logger.debug("Starting comb sort...")
+                comb_sort(self.data, self.data_visualize, self.speed_scale.get())
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Comb sort complete.")
+            case "Cocktail Shaker Sort":
+                self.logger.debug("Starting cocktail sort...")
+                cocktail_sort(self.data, self.data_visualize, self.speed_scale.get())
+                self.data_visualize(["#C6D57E" for _ in range(len(self.data))], self.data)
+                self.logger.debug("Cocktail sort complete.")

@@ -11,6 +11,7 @@ from screen import Screen
 # TODO reverse orders
 # TODO UI
 # TODO rainbow at the end
+# TODO Bitonic Sort, Pigeonhole Sort???
 
 
 def main() -> None:
