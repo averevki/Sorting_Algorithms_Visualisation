@@ -92,7 +92,7 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.assertEqual(heapsort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
         self.assertEqual(heapsort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
         self.assertEqual(heapsort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
-    #
+
     def test_shell_sort(self) -> None:
         self.assertEqual(shell_sort(self.arr1, self.mockup_func, 0), sorted(self.arr1))
         self.assertEqual(shell_sort(self.arr2, self.mockup_func, 0), sorted(self.arr2))

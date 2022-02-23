@@ -29,7 +29,7 @@ class Screen:
     CANVAS_HEIGHT = 380
     CANVAS_WIDTH = WINDOW_WIDTH
     SPACING = 5
-    ALGORITHMS = ["Selection Sort", "Bubble Sort", "Merge Sort", "Heap Sort", "Quicksort", "Shell sort",
+    ALGORITHMS = ["Selection Sort", "Bubble Sort", "Merge Sort", "Heap Sort", "Quicksort", "Shell Sort",
                   "Insertion Sort", "Radix Sort", "Comb Sort", "Cocktail Shaker Sort"]
 
     def __init__(self) -> None:
