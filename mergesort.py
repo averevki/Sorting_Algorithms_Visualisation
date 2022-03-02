@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 
 """Merge sort algorithm.
 Complexity: worst:   O(n log n)
@@ -8,7 +7,7 @@ Complexity: worst:   O(n log n)
 """
 
 
-def visualize_merge(array: List, left_i: int, mid: int, right_i: int, visualize: Callable, speed: float, green_indexes,
+def visualize_merge(array: list, left_i: int, mid: int, right_i: int, visualize: callable, speed: float, green_indexes,
                     red_indexes) -> None:
     """Reload columns and visualization colors"""
     colors = []
@@ -31,7 +30,7 @@ def visualize_merge(array: List, left_i: int, mid: int, right_i: int, visualize:
     green_indexes.clear()
 
 
-def merge_sort(array: List, visualize: Callable, speed: float, left_i, right_i) -> List:
+def merge_sort(array: list, visualize: callable, speed: float, left_i, right_i) -> list:
     """Sort given array with merge sort algorithm."""
     if left_i < right_i:
         green_indexes, red_indexes = [], []

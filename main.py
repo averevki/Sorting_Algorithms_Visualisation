@@ -12,6 +12,7 @@ from screen import Screen
 # TODO UI
 # TODO rainbow at the end
 # TODO Bitonic Sort, Pigeonhole Sort???
+# TODO documentation .md
 
 
 def main() -> None:

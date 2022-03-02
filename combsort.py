@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 
 """Comb sort algorithm.
 Complexity: worst:   O(n^2)
@@ -17,7 +16,7 @@ def get_next_gap(gap):
     return gap
 
 
-def comb_sort(array: List, visualize: Callable, speed: float) -> List:
+def comb_sort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with comb sort algorithm."""
     n = len(array)
     # Initialize gap

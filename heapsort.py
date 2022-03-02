@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 
 """Heap sort algorithm.
 Complexity: worst:   O(n log n)
@@ -8,7 +7,7 @@ Complexity: worst:   O(n log n)
 """
 
 
-def heapify(array: List, n: int, i: int, visualize: Callable, speed: float):
+def heapify(array: list, n: int, i: int, visualize: callable, speed: float):
     """Heap-sorting given tree or subtree."""
     root = i
     left = 2 * i + 1    # left child index = 2 * i + 1
@@ -26,7 +25,7 @@ def heapify(array: List, n: int, i: int, visualize: Callable, speed: float):
         heapify(array, n, root, visualize, speed)   # re-heapify subtree if root has changed
 
 
-def heapsort(array: List, visualize: Callable, speed: float) -> List:
+def heapsort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with heap sort algorithm."""
     arr_len = len(array)
     for i in range(arr_len // 2 - 1, -1, -1):       # arr_len // 2 - 1 = last parent position

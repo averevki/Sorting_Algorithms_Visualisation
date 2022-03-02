@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 import logging
 from logging import config
 
@@ -10,7 +9,7 @@ Complexity: worst:   O(n^2)
 """
 
 
-def bubble_sort(array: List, visualize: Callable, speed: float) -> List:
+def bubble_sort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with bubble sort algorithm."""
     logging.config.fileConfig("logging.conf")  # Use logger config
     logger = logging.getLogger(__name__)  # Create logger

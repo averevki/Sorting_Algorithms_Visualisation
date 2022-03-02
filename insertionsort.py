@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 
 """Insertion sort algorithm.
 Complexity: worst:   O(n^2)
@@ -8,7 +7,7 @@ Complexity: worst:   O(n^2)
 """
 
 
-def insertion_sort(array: List, visualize: Callable, speed: float) -> List:
+def insertion_sort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with insertion sort algorithm."""
     # Traverse through 1 to len(arr)
     for i in range(1, len(array)):

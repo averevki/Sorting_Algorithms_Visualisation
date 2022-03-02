@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 
 """Selection sort algorithm.
 Complexity: worst:   O(n^2)
@@ -8,7 +7,7 @@ Complexity: worst:   O(n^2)
 """
 
 
-def visualize_selection(array: List, i: int, j: int, min_i: int, visualize: Callable, speed: float) -> None:
+def visualize_selection(array: list, i: int, j: int, min_i: int, visualize: callable, speed: float) -> None:
     """Reload columns and visualization colors"""
     colors = []
     for index in range(len(array)):
@@ -22,7 +21,7 @@ def visualize_selection(array: List, i: int, j: int, min_i: int, visualize: Call
     sleep(speed)
 
 
-def selection_sort(array: List, visualize: Callable, speed: float) -> List:
+def selection_sort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with selection sort algorithm."""
     arr_len = len(array)
     for i in range(arr_len):

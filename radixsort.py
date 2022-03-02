@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 
 """Radix sort algorithm.
 Complexity: worst:   O(l * n) (l is key length)
@@ -33,7 +32,7 @@ def counting_sort(arr, exp1):
         arr[i] = output[i]
 
 
-def radix_sort(array: List, visualize: Callable, speed: float) -> List:
+def radix_sort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with radix sort algorithm."""
     # Find the maximum number to know number of digits
     max1 = max(array)

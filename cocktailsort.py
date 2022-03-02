@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 
 """Cocktail shaker sort algorithm.
 Complexity: worst:   O(n^2)
@@ -8,7 +7,7 @@ Complexity: worst:   O(n^2)
 """
 
 
-def cocktail_sort(array: List, visualize: Callable, speed: float) -> List:
+def cocktail_sort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with cocktail shaker sort algorithm."""
     n = len(array)
     swapped = True

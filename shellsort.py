@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 
 """Shell sort algorithm.
 Complexity: worst:   O(n^2)
@@ -8,12 +7,12 @@ Complexity: worst:   O(n^2)
 """
 
 
-def visualize_shell(array: List, color: str, i: int, j: int, visualize: Callable, speed: float) -> None:
+def visualize_shell(array: list, color: str, i: int, j: int, visualize: callable, speed: float) -> None:
     visualize([color if z == i or z == j else "#A2CDCD" for z in range(len(array))], array)
     sleep(speed)
 
 
-def shell_sort(array: List, visualize: Callable, speed: float) -> List:
+def shell_sort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with ShellSort algorithm."""
     gap = len(array) // 2  # first gap will have half of the array width
     while gap > 0:

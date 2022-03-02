@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import ttk
 from random import randrange
-from typing import List
 import logging
 from logging import config
 from bubblesort import bubble_sort
@@ -91,7 +90,7 @@ class Screen:
         self.logger.debug("Random array generated.")
         self.data_visualize([self.BLUE for _ in self.data])
 
-    def data_visualize(self, colors: List, data: None | List = None) -> None:
+    def data_visualize(self, colors: list, data: None | list = None) -> None:
         """Redraw columns"""
         self.logger.debug("Redrawing columns...")
         if data is not None:

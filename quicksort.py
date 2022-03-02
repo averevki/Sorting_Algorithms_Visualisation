@@ -1,5 +1,4 @@
 from time import sleep
-from typing import List, Callable
 
 """Quicksort algorithm.
 Complexity: worst:   O(n^2)
@@ -8,7 +7,7 @@ Complexity: worst:   O(n^2)
 """
 
 
-def visualize_part(array: List, left: int, high: int, i: int, visualize: Callable, speed: float) -> None:
+def visualize_part(array: list, left: int, high: int, i: int, visualize: callable, speed: float) -> None:
     """Reload columns and visualization colors"""
     colors = []
     for j in range(len(array)):
@@ -22,7 +21,7 @@ def visualize_part(array: List, left: int, high: int, i: int, visualize: Callabl
     sleep(speed)
 
 
-def partition(array: List, low: int, high: int, visualize: Callable, speed: float) -> int:
+def partition(array: list, low: int, high: int, visualize: callable, speed: float) -> int:
     """Quicksort partition algorithm"""
     left = low  # boarder
     pivot = array[high]  # pivot
@@ -35,7 +34,7 @@ def partition(array: List, low: int, high: int, visualize: Callable, speed: floa
     return left
 
 
-def quicksort(array: List, low: int, high: int, visualize: Callable, speed: float) -> List:
+def quicksort(array: list, low: int, high: int, visualize: callable, speed: float) -> list:
     """Sort given array with quicksort algorithm"""
     if low < high:
         pindex = partition(array, low, high, visualize, speed)  # get partition index
