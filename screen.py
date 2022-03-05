@@ -1,8 +1,11 @@
+"""Graphical User Interface maintaining"""
+
 from tkinter import *
 from tkinter import ttk
 from random import randrange
 import logging
 from logging import config
+
 from bubblesort import bubble_sort
 from quicksort import quicksort
 from mergesort import merge_sort

@@ -1,10 +1,10 @@
-from time import sleep
-
 """Comb sort algorithm.
 Complexity: worst:   O(n^2)
             average: O(n^2 / 2^p) (p is number of increments)
             best:    O(n log n)
 """
+
+from time import sleep
 
 
 # To find next gap from current

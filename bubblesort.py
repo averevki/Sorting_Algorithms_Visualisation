@@ -1,12 +1,12 @@
-from time import sleep
-import logging
-from logging import config
-
 """Bubble sort algorithm.
 Complexity: worst:   O(n^2)
             average: O(n^2)
             best:    O(n)
 """
+
+from time import sleep
+import logging
+from logging import config
 
 
 def bubble_sort(array: list, visualize: callable, speed: float) -> list:

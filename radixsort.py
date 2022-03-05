@@ -1,8 +1,8 @@
-from time import sleep
-
 """Radix sort algorithm.
 Complexity: worst:   O(l * n) (l is key length)
 """
+
+from time import sleep
 
 
 # A function to do counting sort of arr[] according to the digit represented by exp.

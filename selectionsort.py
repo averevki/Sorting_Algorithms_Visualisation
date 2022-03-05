@@ -1,10 +1,10 @@
-from time import sleep
-
 """Selection sort algorithm.
 Complexity: worst:   O(n^2)
             average: O(n^2)
             best:    O(n^2)
 """
+
+from time import sleep
 
 
 def visualize_selection(array: list, i: int, j: int, min_i: int, visualize: callable, speed: float) -> None:

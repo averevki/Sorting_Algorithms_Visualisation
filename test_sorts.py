@@ -1,6 +1,8 @@
+"""Unit tests for algorithms implementation"""
 #!/usr/bin/env python3
 
 import unittest
+
 from bubblesort import bubble_sort
 from quicksort import quicksort
 from mergesort import merge_sort

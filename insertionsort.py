@@ -1,10 +1,10 @@
-from time import sleep
-
 """Insertion sort algorithm.
 Complexity: worst:   O(n^2)
             average: O(n^2)
             best:    O(n)
 """
+
+from time import sleep
 
 
 def insertion_sort(array: list, visualize: callable, speed: float) -> list:

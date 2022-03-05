@@ -1,10 +1,10 @@
-from time import sleep
-
 """Merge sort algorithm.
 Complexity: worst:   O(n log n)
             average: O(n log n)
             best:    O(n log n)
 """
+
+from time import sleep
 
 
 def visualize_merge(array: list, left_i: int, mid: int, right_i: int, visualize: callable, speed: float, green_indexes,

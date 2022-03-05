@@ -1,10 +1,10 @@
-from time import sleep
-
 """Shell sort algorithm.
 Complexity: worst:   O(n^2)
             average: depends on gap
             best:    O(n log n)
 """
+
+from time import sleep
 
 
 def visualize_shell(array: list, color: str, i: int, j: int, visualize: callable, speed: float) -> None:

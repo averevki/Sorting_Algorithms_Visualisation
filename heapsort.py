@@ -1,13 +1,13 @@
-from time import sleep
-
 """Heap sort algorithm.
 Complexity: worst:   O(n log n)
             average: O(n log n)
             best:    O(n log n)
 """
 
+from time import sleep
 
-def heapify(array: list, n: int, i: int, visualize: callable, speed: float):
+
+def heapify(array: list, n: int, i: int, visualize: callable, speed: float) -> None:
     """Heap-sorting given tree or subtree."""
     root = i
     left = 2 * i + 1    # left child index = 2 * i + 1
