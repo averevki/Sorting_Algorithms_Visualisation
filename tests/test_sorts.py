@@ -1,18 +1,19 @@
-"""Unit tests for algorithms implementation"""
 #!/usr/bin/env python3
+
+"""Unit tests for algorithms implementation"""
 
 import unittest
 
-from bubblesort import bubble_sort
-from quicksort import quicksort
-from mergesort import merge_sort
-from selectionsort import selection_sort
-from heapsort import heapsort
-from shellsort import shell_sort
-from insertionsort import insertion_sort
-from radixsort import radix_sort
-from combsort import comb_sort
-from cocktailsort import cocktail_sort
+from Sorting_Algorithms_Visualisation.sorts.bubblesort import bubble_sort
+from Sorting_Algorithms_Visualisation.sorts.quicksort import quicksort
+from Sorting_Algorithms_Visualisation.sorts.mergesort import merge_sort
+from Sorting_Algorithms_Visualisation.sorts.selectionsort import selection_sort
+from Sorting_Algorithms_Visualisation.sorts.heapsort import heapsort
+from Sorting_Algorithms_Visualisation.sorts.shellsort import shell_sort
+from Sorting_Algorithms_Visualisation.sorts.insertionsort import insertion_sort
+from Sorting_Algorithms_Visualisation.sorts.radixsort import radix_sort
+from Sorting_Algorithms_Visualisation.sorts.combsort import comb_sort
+from Sorting_Algorithms_Visualisation.sorts.cocktailsort import cocktail_sort
 
 
 class TestSortingAlgorithms(unittest.TestCase):
