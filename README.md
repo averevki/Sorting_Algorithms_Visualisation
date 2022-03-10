@@ -2,9 +2,9 @@
 ### All algorithms implemented in python.
 
 ## Preview
-![Interface](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/images/interface.png)
-![Action](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/images/action.png)
-![Selection](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/images/selection.png)
+![Interface](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/blob/main/images/interface.png)
+![Action](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/blob/main/images/action.png)
+![Selection](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/blob/main/images/selection.png)
 
 ## Available sort algorithms
 - Selection sort
@@ -27,4 +27,4 @@
 Websites [Geeksforgeeks](https://www.geeksforgeeks.org/) and 
 [Programiz](https://www.programiz.com/) for algorithms articles.
 
-###### <center>*Aleksandr Verevkin 2022*</center>
+###### *Aleksandr Verevkin 2022*
