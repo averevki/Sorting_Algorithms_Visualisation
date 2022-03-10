@@ -15,7 +15,7 @@ from screen import Screen
 # TODO documentation .md
 
 
-def main() -> None:
+def main():
     Screen()
 
 
