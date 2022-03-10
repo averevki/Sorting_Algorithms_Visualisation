@@ -7,31 +7,25 @@ Complexity: worst:   O(n^2)
 from time import sleep
 
 
-# To find next gap from current
-def get_next_gap(gap):
-    # Shrink gap by Shrink factor
-    gap = (gap * 10) // 13
-    if gap < 1:
-        return 1
-    return gap
+def get_next_gap(gap: int) -> int:
+    gap = (gap * 10) // 13  # pick new gap with his formula
+    return gap if gap >= 1 else 1
 
 
 def comb_sort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with comb sort algorithm."""
-    n = len(array)
-    # Initialize gap
-    gap = n
-    # Initialize swapped as true to make sure that loop runs
+    arr_len = len(array)
+    gap = arr_len     # initialize gap size
     swapped = True
-    # Keep running while gap is more than 1 and last iteration caused a swap
-    while gap != 1 or swapped == 1:
-        # Find next gap
-        gap = get_next_gap(gap)
-        # Initialize swapped as false so that we can check if swap happened or not
+    while gap != 1 or swapped is True:
+        gap = get_next_gap(gap)     # pick next gap
         swapped = False
-        # Compare all elements with current gap
-        for i in range(0, n - gap):
+        for i in range(arr_len - gap):  # check every 2 elements within inspected gap
             if array[i] > array[i + gap]:
                 array[i], array[i + gap] = array[i + gap], array[i]
+                visualize(["#D57E7E" if k == i or k == i + gap else "#A2CDCD" for k in range(arr_len)], array)
+                sleep(speed)
                 swapped = True
+            visualize(["#C6D57E" if k == i or k == i + gap else "#A2CDCD" for k in range(arr_len)], array)
+            sleep(speed)
     return array  # return sorted array for unit tests

@@ -1,2 +1,1 @@
-# Sorting_Algorithms_Visualisation
-Visualisation of different sorting algorithms in Python
+# Visualisation of different sorting algorithms in Python

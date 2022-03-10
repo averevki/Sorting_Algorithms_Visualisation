@@ -8,11 +8,10 @@ __license__ = "GPL 3.0"
 __status__ = "production"
 __maintainer__ = "Aleksandr Verevkin"
 from screen import Screen
-# TODO reverse orders
-# TODO UI
-# TODO rainbow at the end
-# TODO Bitonic Sort, Pigeonhole Sort???
-# TODO documentation .md
+# TODO add reverse orders
+# TODO update UI
+# TODO add Bitonic Sort, Pigeonhole Sort
+# TODO markdown documentation
 
 
 def main():

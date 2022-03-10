@@ -19,6 +19,10 @@ from sorts.cocktailsort import cocktail_sort
 
 
 class Screen:
+    """Main screen
+
+    Handle everything that happens on the screen
+    """
     WINDOW_HEIGHT = 900
     WINDOW_WIDTH = 600
     BLUE = "#A2CDCD"

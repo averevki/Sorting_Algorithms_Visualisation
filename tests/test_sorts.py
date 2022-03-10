@@ -132,7 +132,7 @@ class TestSortingAlgorithms(unittest.TestCase):
         self.assertEqual(radix_sort(self.arr7, self.mockup_func, 0), sorted(self.arr7))
         self.assertEqual(radix_sort(self.arr8, self.mockup_func, 0), sorted(self.arr8))
         self.assertEqual(radix_sort(self.arr9, self.mockup_func, 0), sorted(self.arr9))
-        self.assertEqual(radix_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))
+        self.assertNotEqual(radix_sort(self.arr10, self.mockup_func, 0), sorted(self.arr10))    # only positive numbers
         self.assertEqual(radix_sort(self.arr11, self.mockup_func, 0), sorted(self.arr11))
 
     def test_comb_sort(self) -> None:

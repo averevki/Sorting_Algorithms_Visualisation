@@ -1,46 +1,42 @@
 """Radix sort algorithm.
+
+Radix sort algorithm can only sort numbers
+
 Complexity: worst:   O(l * n) (l is key length)
 """
 
 from time import sleep
 
 
-# A function to do counting sort of arr[] according to the digit represented by exp.
-def counting_sort(arr, exp1):
-    n = len(arr)
-    # The output array elements that will have sorted arr
-    output = [0] * n
-    # initialize count array as 0
-    count = [0] * 10
-    # Store count of occurrences in count[]
-    for i in range(0, n):
+def counting_sort(arr: list, exp1: int, visualize: callable, speed: float) -> None:
+    arr_len = len(arr)
+    output = [0] * arr_len  # future sorted array
+    count = [0] * 10    # count array
+    for i in range(arr_len):    # store number of occurrences, of sorted digit, in count array
         index = (arr[i] / exp1)
+        visualize(["#C6D57E" if k == i else "#A2CDCD" for k in range(arr_len)], arr)
+        sleep(speed)
         count[int(index % 10)] += 1
-    # Change count[i] so that count[i] now contains actual position of this digit in output array
     for i in range(1, 10):
         count[i] += count[i - 1]
-    # Build the output array
-    i = n - 1
-    while i >= 0:
+    for i in range(arr_len - 1, -1, -1):    # build output array
         index = (arr[i] / exp1)
         output[count[int(index % 10)] - 1] = arr[i]
         count[int(index % 10)] -= 1
-        i -= 1
-    # Copying the output array to arr[], so that arr now contains sorted numbers
-    i = 0
-    for i in range(0, len(arr)):
+    for i in range(len(arr)):   # copy sorted array to start array
         arr[i] = output[i]
+        visualize(["#D57E7E" if k == i else "#A2CDCD" for k in range(arr_len)], arr)
+        sleep(speed)
 
 
 def radix_sort(array: list, visualize: callable, speed: float) -> list:
     """Sort given array with radix sort algorithm."""
-    # Find the maximum number to know number of digits
-    max1 = max(array)
-
-    # Do counting sort for every digit. Note that instead of passing digit number, exp is passed. exp is 10^i
-    # where i is current digit number
-    exp = 1
-    while max1 / exp > 0:
-        counting_sort(array, exp)
-        exp *= 10
+    try:
+        max1 = max(array)   # find number with most digits
+    except ValueError:  # except empty list
+        return array
+    exp = 1     # digit
+    while max1 // exp > 0:
+        counting_sort(array, exp, visualize, speed)
+        exp *= 10   # switch digit, 1 -> 10, 10 -> 100 etc.
     return array  # return sorted array for unit tests
