@@ -1,5 +1,8 @@
-# Sorting algorithms visualisation
-### All algorithms implemented in python.
+# Sorting algorithms visualisation (Python)
+
+## Installation and setup
+`git clone https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation`<br>
+`python3 main.py`
 
 ## Preview
 ![Interface](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/blob/main/images/interface.png)
