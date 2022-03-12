@@ -6,6 +6,7 @@ Complexity: worst:   O(n^2)
 
 from time import sleep
 
+
 def visualize_part(array: list, left: int, high: int, i: int, visualize: callable, speed: float) -> None:
     """Reload columns and visualization colors"""
     colors = []
