@@ -4,16 +4,16 @@
 
 import unittest
 
-from ..sorts.bubblesort import bubble_sort
-from ..sorts.quicksort import quicksort
-from ..sorts.mergesort import merge_sort
-from ..sorts.selectionsort import selection_sort
-from ..sorts.heapsort import heapsort
-from ..sorts.shellsort import shell_sort
-from ..sorts.insertionsort import insertion_sort
-from ..sorts.radixsort import radix_sort
-from ..sorts.combsort import comb_sort
-from ..sorts.cocktailsort import cocktail_sort
+from src.sorts.bubblesort import bubble_sort
+from src.sorts.quicksort import quicksort
+from src.sorts.mergesort import merge_sort
+from src.sorts.selectionsort import selection_sort
+from src.sorts.heapsort import heapsort
+from src.sorts.shellsort import shell_sort
+from src.sorts.insertionsort import insertion_sort
+from src.sorts.radixsort import radix_sort
+from src.sorts.combsort import comb_sort
+from src.sorts.cocktailsort import cocktail_sort
 
 
 class TestSortingAlgorithms(unittest.TestCase):
