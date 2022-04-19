@@ -39,7 +39,7 @@ class Screen:
                   "Insertion Sort", "Radix Sort", "Comb Sort", "Cocktail Shaker Sort"]
 
     def __init__(self) -> None:
-        logging.config.fileConfig("logging.conf")  # Use logger config
+        logging.config.fileConfig("src/logging.conf")  # Use logger config
         self.logger = logging.getLogger(__name__)  # Create logger
 
         self.logger.debug("Setting up screen...")
