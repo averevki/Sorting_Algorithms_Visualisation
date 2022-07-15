@@ -1,13 +1,13 @@
 # Sorting algorithms visualisation (Python)
 
 ## Installation and setup
-`$ git clone https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation`<br>
+`$ git clone https://github.com/averevki/Sorting_Algorithms_Visualisation`<br>
 `$ python3 main.py`
 
 ## Preview
-![Interface](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/blob/main/images/interface.png)
-![Action](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/blob/main/images/action.png)
-![Selection](https://github.com/Verevkin-A/Sorting_Algorithms_Visualisation/blob/main/images/selection.png)
+![Interface](https://github.com/averevki/Sorting_Algorithms_Visualisation/blob/main/images/interface.png)
+![Action](https://github.com/averevki/Sorting_Algorithms_Visualisation/blob/main/images/action.png)
+![Selection](https://github.com/averevki/Sorting_Algorithms_Visualisation/blob/main/images/selection.png)
 
 ## Available sort algorithms
 - Selection sort
